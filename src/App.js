@@ -158,10 +158,12 @@ export default class App extends React.Component {
             </div>
           </div>
         </div>
-        <div class="footer container">
+        <div class="footer">
+          <div className="container">
           <p>Terms & Conditions</p>
           <p>Designed and developed by Kvana.com@2019</p>
           <p>Contact</p>
+          </div>
         </div>
       </div>
     )

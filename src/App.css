@@ -225,9 +225,12 @@ font-size: 25px;
 /* contact end */
 /* footer start */
 .footer{
+  background-color: rgba(217,227,234,0.88);
+}
+.footer .container{
   display: flex;
   justify-content: space-between;
-  background-color: white;
+
   color: #000;
 }
 /* footer end */
