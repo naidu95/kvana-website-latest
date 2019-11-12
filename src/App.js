@@ -3,7 +3,19 @@ import './App.css';
 import Slider from "react-slick";
 
 export default class App extends React.Component {
-
+ componentDidMount(){
+  var menu=document.getElementById("menu");
+  var nav=document.getElementById("nav");
+  var exit=document.getElementById("exit");
+  menu.addEventListener("click",function(e){
+      nav.classList.toggle('hide-mobile');
+      e.preventDefault();
+  })
+  exit.addEventListener("click",function(e){
+      nav.classList.add('hide-mobile');
+      e.preventDefault();
+  })
+ }
   render() {
     const settings = {
       dots: true,
@@ -17,6 +29,7 @@ export default class App extends React.Component {
     };
     return (
       <div className="kvana-website">
+        <div className="clip-css"></div>
         <div className="nav-header">
           <div className="container">
             <header>
@@ -28,20 +41,21 @@ export default class App extends React.Component {
                   <img src="menu.svg" alt="toggle" className="menu" id="menu" />
                 </a>
                 <ul className="show-desktop hide-mobile" id="nav">
-                  <li id="exit" className="exit-btn hide-desktop"><img src="menu.svg" alt="exit" /></li>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Work</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li id="exit" className="exit-btn hide-desktop"><i className="fa fa-times" aria-hidden="true"></i></li>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#work">Work</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
                 </ul>
               </nav>
             </header>
           </div>
         </div>
-        <div className="landing-page">
+        <div id="home" className="landing-page">
+        
           <ul className="container">
             <li>
-              <div style={{ textAlign: 'left', marginTop: '5em' }}>
+              <div className="we-are"style={{ textAlign: 'left', marginTop: '5em' }}>
                 <span>We are</span><br />
                 <span style={{ textTransform: "uppercase" }}>Kvana</span>
                 <p>The world is mobile. You should be too. Kvana is a full-service app development company for iOS, Android and the web. We work with companies, brands and funded startups to create great products. Kvana has you covered from conception to launch.</p>
@@ -59,7 +73,7 @@ export default class App extends React.Component {
             <img width="40" height="40" alt="" src="down-arrow.svg" />
           </div>
         </div>
-        <div className="work">
+        <div id="work" className="work">
           <div className="work-title">
             <p id="title">Work</p>
           </div>
@@ -73,7 +87,7 @@ export default class App extends React.Component {
 
           </div>
           <div className="clients">
-            <div class="container">
+            <div className="container">
               <h2>Our Clients</h2>
               <Slider {...settings} >
                 <div ><img src="remidy.png" /></div>
@@ -84,7 +98,7 @@ export default class App extends React.Component {
             </div>
           </div>
         </div>
-        <div className="about">
+        <div id="about" className="about">
           <div className="container">
             <div className="about-title">
               <p id="title">About</p>
@@ -95,31 +109,31 @@ export default class App extends React.Component {
               </div>
               <p>we specialize in:</p>
             </div>
-            <div class="specialization">
+            <div className="specialization">
               <div className="ios">
-                <div><i class="fa fa-apple" aria-hidden="true"></i></div>
+                <div><i className="fa fa-apple" aria-hidden="true"></i></div>
                 <p>ios</p>
               </div>
               <div className="ios">
-                <div><i class="fa fa-android" aria-hidden="true"></i></div>
+                <div><i className="fa fa-android" aria-hidden="true"></i></div>
                 <p>android</p>
               </div>
               <div className="ios">
-                <div><i class="fa fa-diamond" aria-hidden="true"></i></div>
+                <div><i className="fa fa-diamond" aria-hidden="true"></i></div>
                 <p>web</p>
               </div>
               <div className="ios">
-                <div><i class="fa fa-mobile" aria-hidden="true"></i></div>
+                <div><i className="fa fa-mobile" aria-hidden="true"></i></div>
                 <p>app design</p>
               </div>
               <div className="ios">
-                <div><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div><i className="fa fa-user" aria-hidden="true"></i></div>
                 <p>ux/ui</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="contact">
+        <div id="contact" className="contact">
           <div className="container">
             <div className="contact-title">
               <p id="title">Contact Us</p>
@@ -134,9 +148,9 @@ export default class App extends React.Component {
               </div>
 
             </div>
-            <div class="address">
+            <div className="address">
               <div>
-                <i class="fa fa-map-marker" aria-hidden="true" style={{ fontSize: "50px", textAlign: "center" }}></i>
+                <i className="fa fa-map-marker" aria-hidden="true" style={{ fontSize: "50px", textAlign: "center" }}></i>
                 <address>
                   <p>Kvana Inc.</p>
                   <p>177 Park Avenue,</p>
@@ -146,7 +160,7 @@ export default class App extends React.Component {
                 </address>
               </div>
               <div>
-                <i class="fa fa-map-marker" aria-hidden="true" style={{ fontSize: "50px" }}></i>
+                <i className="fa fa-map-marker" aria-hidden="true" style={{ fontSize: "50px" }}></i>
                 <address>
                   <p>#302, Harsha Homes,</p>
                   <p>Near Madhapur Police Station,</p>
@@ -158,7 +172,7 @@ export default class App extends React.Component {
             </div>
           </div>
         </div>
-        <div class="footer">
+        <div className="footer">
           <div className="container">
           <p>Terms & Conditions</p>
           <p>Designed and developed by Kvana.com@2019</p>
