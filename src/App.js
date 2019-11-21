@@ -1,8 +1,20 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './App.css';
 import Slider from "react-slick";
 
-export default class App extends React.Component {
+class App extends Component {
+  state = {
+    settings: {
+      dots: true,
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 2000,
+      autoplaySpeed: 2000,
+      cssEase: "linear"
+    }
+  }
  componentDidMount(){
   var menu=document.getElementById("menu");
   var nav=document.getElementById("nav");
@@ -17,16 +29,7 @@ export default class App extends React.Component {
   })
  }
   render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
-      cssEase: "linear"
-    };
+    
     return (
       <div className="kvana-website">
         <div className="clip-css"></div>
@@ -70,7 +73,7 @@ export default class App extends React.Component {
           </ul>
 
           <div className="downArrow bounce">
-            <img width="40" height="40" alt="" src="down-arrow.svg" />
+            <a href="#work"><img width="40" height="40" alt="" src="down-arrow.svg" /></a>
           </div>
         </div>
         <div id="work" className="work">
@@ -89,7 +92,7 @@ export default class App extends React.Component {
           <div className="clients">
             <div className="container">
               <h2>Our Clients</h2>
-              <Slider {...settings} >
+              <Slider {...this.state.settings} >
                 <div ><img src="remidy.png" /></div>
                 <div ><img src="mumsy.png" /></div>
                 <div ><img src="Livefyre.png" /></div>
@@ -186,3 +189,4 @@ export default class App extends React.Component {
 
 }
 
+export default App;

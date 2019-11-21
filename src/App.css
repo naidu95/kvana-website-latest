@@ -20,8 +20,11 @@ ul{
   display: none;
 }
 .nav-header{
-  /* position: fixed; */
+  position: fixed;
+  height: 51px;
+  width: 100%;
   background-color: black;
+  z-index: 100;
 }
 header{
   display: flex;
@@ -62,7 +65,7 @@ nav ul li a:hover{
   background-color:rgb(65,75,75)
 }
 .landing-page{
-height: calc(100vh - 51px);
+height: calc(100vh);
 /* background-color:rgba(217,227,234,0.88);    */
 /* #e0edf8 */
 }
@@ -80,7 +83,7 @@ height: calc(100vh - 51px);
 }
 .landing-page ul li div{
  text-align:right;
- padding-top:6.5em;
+ padding-top:8.5em;
  vertical-align: middle;
 }
 .landing-page ul li div span{
