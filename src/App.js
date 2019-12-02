@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
-// import Slider from "react-slick";
+import Slider from "react-slick";
 
 class App extends Component {
   state = {
@@ -92,12 +92,12 @@ class App extends Component {
           <div className="clients">
             <div className="container">
               <h2>Our Clients</h2>
-              {/* <Slider {...this.state.settings} >
+              <Slider {...this.state.settings} >
                 <div ><img src="remidy.png" /></div>
                 <div ><img src="mumsy.png" /></div>
                 <div ><img src="Livefyre.png" /></div>
                 <div ><img src="caddybeacon.png" /></div>
-              </Slider> */}
+              </Slider>
             </div>
           </div>
         </div>

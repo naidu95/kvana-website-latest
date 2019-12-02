@@ -40,5 +40,16 @@ describe('renders without crashing', () => {
       expect(app.find('.specialization .ios p').at(4).props().children).toEqual('ux/ui');
     });
   })
+  describe("Footer",()=>{
+    it('render the footer elements', () => {
+      expect(app.find('.footer p').at(0).props().children).toEqual('Terms & Conditions');
+    });
+    it('render the footer elements', () => {
+      expect(app.find('.footer p').at(2).props().children).toEqual('Contact');
+    });
+    it('render the footer elements', () => {
+      expect(app.find('.footer p').at(1).props().children).toEqual('Designed and developed by Kvana.com@2019');
+    });
+  })
   
 });
